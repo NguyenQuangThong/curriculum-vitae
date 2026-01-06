@@ -55,7 +55,7 @@
             <h2 class="section-title">Skills</h2>
             <p class="skills-list">
                 Java core • Kotlin • Data structures • Design patterns • SOLID principles • Spring • ReactJS • Mockito •
-                PowerMock • PostgreSQL • MongoDB • GitHub • Docker • SVN • Backlog • Jenkins • AWS
+                PowerMock • PostgreSQL • MongoDB • GitHub • Docker • SVN • Backlog • Jenkins • AWS • Redis
             </p>
         </section>
 
@@ -78,12 +78,19 @@
                     </div>
                 </div>
                 <ul class="job-description">
-                    <li>Develop a server that can handle high traffic CCU.</li>
-                    <li>Manage users, their wallets, points, transactions, and daily rewards.</li>
-                    <li>Use RabbitMQ to interact with other servers to do Create model, Create texture features.</li>
-                    <li>Use Cloudflare R2 to store data.</li>
-                    <li>Deploy to dedicated server using Docker and Github Actions.</li>
-                    <li>Tech stacks: Java, Spring, SocketIO, RabbitMQ, Cloudflare R2, MongoDB, Spring WebFlux, OAuth2,
+                    <li>Implemented multi-method authentication system including standard OAuth2, JWT, and Sign-In with
+                        Ethereum (SIWE) for Web3 integration.</li>
+                    <li>Solved distributed concurrency challenges using Redisson Distributed Locks to prevent race
+                        conditions in user wallet and reward transactions.</li>
+                    <li>Engineered a high-performance real-time event system using Netty SocketIO to handle immediate
+                        model/texture generation updates for users.</li>
+                    <li>Designed a scalable Event-Driven Architecture using Spring Application Events and RabbitMQ to
+                        decouple heavy processing tasks (AI model generation) from the main API server.</li>
+                    <li>Integrated AWS S3 SDK for managing asset storage on Cloudflare R2, optimizing bandwidth and
+                        storage costs.</li>
+                    <li>Enforced clean code standards and reduced boilerplate using Lombok and MapStruct, while ensuring
+                        API reliability with JUnit 5 and Jacoco coverage.</li>
+                    <li>Tech stack: Java, Spring, SocketIO, RabbitMQ, AWS S3, MongoDB, Spring WebFlux, OAuth2,
                         JWT, Redis, Loki, Promtail, Grafana, Prometheus.</li>
                 </ul>
             </div>
@@ -102,14 +109,20 @@
                     </div>
                 </div>
                 <ul class="job-description">
-                    <li>Develop a real-time esport game server using Java and EzyFox framework (inherit from SmartFox).
+                    <li>Architected and implemented a high-performance online game server using the EzyFox framework,
+                        supporting thousands of concurrent real-time connections.
                     </li>
-                    <li>Handle real-time game issues such as race condition, low performance using Java concurrency,
-                        atomic, thread-safe collections, observer pattern.</li>
-                    <li>Create PR to merge code to DEV, STG and PROD to deliver weekly features.</li>
-                    <li>Do Tournament feature, handle disconnect, offline issues.</li>
-                    <li>Do admin features such as manage roles, permissions, metrics, logs, users.</li>
-                    <li>Tech stacks and tools: Java, EzyFox server, Git, Backlog, Jenkins, Docker, Lens, Spring,
+                    <li>Built a robust Tournament Management Service to handle tournament lifecycles including
+                        scheduling, registration, automatic table balancing, and sitout mode automation.</li>
+                    <li>Implemented real-time spectator management and chat rate-limiting, ensuring a stable and fair
+                        environment for live game viewing.</li>
+                    <li>Designed and optimized MongoDB schemas and queries to handle large-scale game logs and
+                        game histories, significantly improving data retrieval speeds for user analytics.</li>
+                    <li>Developed real-time synchronization services to ensure consistent game state across multiple
+                        distributed server instances.</li>
+                    <li>Integrated comprehensive metric logging and health monitoring (MetricLogger) to proactively
+                        identify and resolve performance bottlenecks in high-frequency game loops.</li>
+                    <li>Tech stack: Java, EzyFox server, Git, Backlog, Jenkins, Docker, Lens, Spring,
                         Thymeleaf, Caffeine, Bucket4j, ShedLock, AWS S3, SES, Cloudfront, Webhook.</li>
                 </ul>
             </div>
