@@ -12,9 +12,22 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
+    <!-- html2pdf.js library for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 
 <body>
+
+    <!-- Download PDF Button -->
+    <button id="downloadPdfBtn" class="download-pdf-btn" title="Download as PDF">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span>Download PDF</span>
+    </button>
 
     <div class="resume-container">
         <!-- Header Section -->
@@ -211,6 +224,82 @@
             <p>Powered by <a href="#">ThongNguyen</a></p>
         </footer>
     </div>
+
+    <script>
+        // PDF Download functionality
+        document.getElementById('downloadPdfBtn').addEventListener('click', function () {
+            const button = this;
+            const originalText = button.querySelector('span').textContent;
+
+            // Show loading state
+            button.querySelector('span').textContent = 'Generating...';
+            button.disabled = true;
+            button.style.opacity = '0.7';
+
+            // Hide the download button before generating PDF
+            button.style.display = 'none';
+
+            const element = document.querySelector('.resume-container');
+            const body = document.body;
+
+            // Store original styles
+            const originalBodyBg = body.style.backgroundColor;
+            const originalBodyPadding = body.style.padding;
+
+            // Remove gray background and padding temporarily
+            body.style.backgroundColor = '#ffffff';
+            body.style.padding = '0';
+
+            // Small delay to ensure styles apply
+            setTimeout(function () {
+                const opt = {
+                    margin: [10, 10, 10, 10],
+                    filename: 'Nguyen_Quang_Thong_CV.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: {
+                        scale: 1.5,
+                        useCORS: true,
+                        logging: false,
+                        letterRendering: true,
+                        backgroundColor: '#ffffff'
+                    },
+                    jsPDF: {
+                        unit: 'mm',
+                        format: 'a4',
+                        orientation: 'portrait'
+                    },
+                    pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+                };
+
+                // Generate PDF
+                html2pdf().set(opt).from(element).save().then(function () {
+                    // Restore original styles
+                    body.style.backgroundColor = originalBodyBg;
+                    body.style.padding = originalBodyPadding;
+                    // Restore button state after download
+                    button.style.display = '';
+                    button.querySelector('span').textContent = originalText;
+                    button.disabled = false;
+                    button.style.opacity = '1';
+                }).catch(function (error) {
+                    console.error('Error generating PDF:', error);
+                    // Restore original styles
+                    body.style.backgroundColor = originalBodyBg;
+                    body.style.padding = originalBodyPadding;
+                    // Restore button even if there's an error
+                    button.style.display = '';
+                    button.querySelector('span').textContent = 'Try Again';
+                    button.disabled = false;
+                    button.style.opacity = '1';
+
+                    // Reset text after 2 seconds
+                    setTimeout(function () {
+                        button.querySelector('span').textContent = originalText;
+                    }, 2000);
+                });
+            }, 100);
+        });
+    </script>
 
 </body>
 
