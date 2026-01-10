@@ -35,7 +35,7 @@
             <!-- Avatar Element Requested by User -->
             <div class="avatar-container">
                 <div class="avatar-placeholder">
-                    <img src="images/cv_ava.jpg" alt="Profile Picture">
+                    <img src="images/cv_avatar.jpg" alt="Profile Picture">
                 </div>
             </div>
 
@@ -55,21 +55,43 @@
         <section class="resume-section">
             <h2 class="section-title">Summary</h2>
             <p>
-                As a developer with 3 years of experience, I have strong coding skills, research abilities, and
-                problem-solving
-                capabilities. I am always in a ready state to face new challenges, eager to improve myself, and taking a
-                step closer to
-                my goal of becoming a valuable developer.
+                Backend Developer with over 3 years of experience specializing in the Java/Spring ecosystem. Strong
+                expertise in building Distributed Systems, handling concurrency, and Event-driven Architecture. Proven
+                track record in designing large-scale real-time systems, optimizing databases, and implementing Web3
+                security solutions. Committed to Clean Code principles and system scalability.
             </p>
         </section>
 
         <!-- Skills Section -->
         <section class="resume-section">
             <h2 class="section-title">Skills</h2>
-            <p class="skills-list">
-                Java core • Kotlin • Data structures • Design patterns • SOLID principles • Spring • ReactJS • Mockito •
-                PowerMock • PostgreSQL • MongoDB • GitHub • Docker • SVN • Backlog • Jenkins • AWS • Redis
-            </p>
+            <div class="skills-container">
+                <div class="skill-group">
+                    <h4>Languages & Core</h4>
+                    <p>Java Core, Kotlin, Data Structures, Design Patterns, SOLID Principles</p>
+                </div>
+                <div class="skill-group">
+                    <h4>Frameworks & Libs</h4>
+                    <p>Spring (Boot, WebFlux, Security, Data JPA), ReactJS, Mockito, PowerMock, EzyFox, Netty SocketIO,
+                        MapStruct</p>
+                </div>
+                <div class="skill-group">
+                    <h4>Databases & Caching</h4>
+                    <p>PostgreSQL, MongoDB, Redis, MySQL, Caffeine</p>
+                </div>
+                <div class="skill-group">
+                    <h4>DevOps & Tools</h4>
+                    <p>GitHub, Docker, Jenkins, AWS (S3, SES), Cloudflare, Nginx, SonarQube, Grafana, Prometheus</p>
+                </div>
+                <div class="skill-group">
+                    <h4>Languages</h4>
+                    <p>Vietnamese (Native), English (TOEIC 800+)</p>
+                </div>
+                <div class="skill-group">
+                    <h4>Soft Skills</h4>
+                    <p>Problem Solving, Teamwork, Self-learning, Effective Communication</p>
+                </div>
+            </div>
         </section>
 
         <!-- Experience Section -->
@@ -192,6 +214,50 @@
                     <li>Collaborated with frontend team to refine API contracts.</li>
                     <li><b>Tech stack:</b> Java, ReactJS, Spring Boot, RBAC, MySQL.</li>
                     <li><b>Tools:</b> IntelliJ IDEA, Postman, Docker, Figma, Mockito, JUnit, GitHub.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Pet Projects Section -->
+        <section class="resume-section">
+            <h2 class="section-title">Personal Projects</h2>
+            <div class="job-entry">
+                <div class="job-header">
+                    <div>
+                        <h3 class="company-name">Saga Orchestrator</h3>
+                        <div class="job-title">Personal Project</div>
+                        <div class="job-project"><span class="project-label">Goal:</span> Learning distributed
+                            transaction management</div>
+                    </div>
+                    <div class="job-meta">
+                        <div class="date">2026</div>
+                    </div>
+                </div>
+                <ul class="job-description">
+                    <li>Implemented the Saga pattern using an orchestrator to manage distributed transactions in a
+                        microservices architecture.</li>
+                    <li>Designed compensate transactions to ensure data consistency across services.</li>
+                    <li><b>Tech stack:</b> Java, Spring Boot, Kafka/RabbitMQ.</li>
+                </ul>
+            </div>
+            <div class="job-entry">
+                <div class="job-header">
+                    <div>
+                        <h3 class="company-name">Infrastructure Automation (Ansible Test)</h3>
+                        <div class="job-title">Personal Project</div>
+                        <div class="job-project"><span class="project-label">Goal:</span> Automating database
+                            infrastructure deployment</div>
+                    </div>
+                    <div class="job-meta">
+                        <div class="date">2024</div>
+                    </div>
+                </div>
+                <ul class="job-description">
+                    <li>Automated the provisioning of cloud infrastructure and database deployment using Ansible and
+                        Pipeline-as-code (Jenkins).</li>
+                    <li>Orchestrated PostgreSQL 15 containers with Docker, ensuring scalable and repeatable environment
+                        setups.</li>
+                    <li><b>Tech stack:</b> Ansible, Jenkins, Docker, PostgreSQL, AWS EC2, Ubuntu.</li>
                 </ul>
             </div>
         </section>
